@@ -1,0 +1,156 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[OT1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{calc}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\hypersetup{
+    pdfstartview=FitH,  
+    linkcolor=black,
+    urlcolor=red, 
+    colorlinks=true,
+    citecolor=blue}
+\usepackage{tikz}
+\usetikzlibrary{ decorations.markings}
+
+\title{Семинар 2}
+\date{\today}
+
+\author{Варламов Антоний Михайлович}
+\newtheorem{thm}{Theorem}
+\newtheorem{defin}{Definition}
+\newtheorem{cons}{Consequence}
+\newtheorem{exmpl}{Example}
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+	\section{Гомоморфизмы}
+	
+	\begin{equation}	
+		\Phi: G \rightarrow G'
+	\end{equation}
+	
+	\begin{equation}
+		\ker \Phi = \lbrace e\rbrace, \Im \Phi  = G'
+	\end{equation}
+	
+	\begin{exmpl}
+		Группа левых сдвигов: $G: g\rightarrow Lg$, $Lg\left(h\right) = gh$. 
+		Группа левых сдвигов изморфна самой себе.
+	\end{exmpl}
+	
+	Классификация гомоморфизмов строится на основе комбинации ядра и образа 
+	гомоморфизма
+	
+	\begin{equation}
+		\begin{matrix}
+			Ker && Im \\
+			G && \lbrace e' \rbrace \\
+			<G && <G'\\
+			\lbrace e \rbrace && G'
+		\end{matrix}
+	\end{equation}
+	
+	Пример накрытия: $G \supset H $ -- инвариантная, $\pi: G\rightarrow G/H$
+	
+	\begin{equation}
+		g \rightarrow \hat{g}: G\rightarrow G
+	\end{equation}
+	
+	\begin{equation}
+		\hat{g}\left(h\right) = ghg^{-1}
+	\end{equation}
+	
+	\begin{equation}
+		g_{1}g_{2} \rightarrow \hat{g_{1}g_{2}}\left(h\right) = g_{1}g_{2}hg_{2}
+		^{-1}g_{1}^{-1} = \hat{g_{1}}\left(\hat{g_{2}}\left(h\right)\right)
+	\end{equation}
+	
+	В таком случае $Ker = C_{g}$ -- центр группы $G$
+	
+	\begin{equation}
+		z = x + iy, 1 \rightarrow \begin{pmatrix}
+		1 && 0 \\
+		0 && 1
+		\end{pmatrix}, i \rightarrow \begin{pmatrix}
+		0 && -1\\
+		1 && 0
+		\end{pmatrix}
+	\end{equation}
+	
+	\begin{thm}
+		\begin{equation}
+			\Phi: G\rightarrow G', Im \Phi \approx G/Ker \Phi
+		\end{equation}
+		
+		\textit{Доказательство:} 
+		$\psi : G/Ker \Phi \rightarrow G'$, в таком случае:
+		
+		\begin{equation}
+			\psi\left(gK\right) = \Phi\left(g\right)
+		\end{equation}
+		\begin{equation}
+			\psi\left(g_{1}Kg_{2}K\right) = \psi\left(g_{1}g_{2}K\right) = 
+			\Phi\left(g_{1}g_{2}\right) = \Phi\left(g_{1}\right)
+			\Phi\left(g_{2}\right) = 
+			\psi\left(g_{1}K\right)\psi\left(g_{2}K\right)
+		\end{equation}
+		
+		\begin{equation}
+			\psi\left(K\right) = \Phi\left(e\right) = e'
+		\end{equation}
+	\end{thm}
+	
+	Пример применения:
+	
+	\begin{equation}
+		G \rightarrow \hat{G}
+	\end{equation}
+	
+	\begin{equation}
+		\hat{G} \approx G/C_{g}
+	\end{equation}
+	
+	Изоморфное отображение группы самой в себя называется автоморфизмом
+	
+	Группа всех автоморфизмов -- $AutG$
+	
+	Пример автоморфизма -- $\hat{G}$
+	
+	\begin{equation}
+		AutG \supset \hat{G}
+	\end{equation}
+	
+	Такая группа называется группой внутренних автоморфизмов
+	
+	Пусть $G \supset H$ -- нормальная подгруппа Тогда сопряжение элементами $H$
+	-- внутренний автоморфизм, внешними будут сопряжения с элементами $G$
+	
+	Группа внутренних автоморфизмов --инвариантная подгруппа.
+	
+	Нужно показать $\Phi^{-1}\circ \hat{g}\circ \Phi$ -- преобразование подобия.
+	
+	\begin{eqnarray}
+		\Phi\circ \hat{g}\circ \Phi^{-1}\ \left(h\right) = 
+		\Phi\circ \hat{g} \circ \Phi^{-1}\left(\Phi\left(\widetilde{h}
+		\right)\right) = \Phi\left(g\right)
+	\end{eqnarray}
+	
+	\section{Алгебраическая классификация групп}
+	
+	Все группы делятся на два больших класса: полупростые и неполупростые
+\end{document}
